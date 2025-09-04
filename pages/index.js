@@ -1,7 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
 
   return (
     <div>
@@ -15,6 +24,7 @@ export default function Home() {
             />
           </div>
 
+          {/* Desktop navigation */}
           <nav className="navbar-nav" id="site-navigation">
             <a href="#" className="nav-link">Features</a>
             <a href="#" className="nav-link">Pricing</a>
@@ -27,15 +37,32 @@ export default function Home() {
             <button className="btn-secondary">Log-in</button>
           </div>
 
+          {/* Mobile trigger */}
           <button
             className="menu-toggle"
             aria-label="Toggle navigation menu"
-            aria-controls="site-navigation"
+            aria-controls="mobile-sheet"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
           >
             <span className="menu-bar" />
           </button>
+        </div>
+
+        {/* Mobile/Tablet full-screen sheet */}
+        <div id="mobile-sheet" className="mobile-sheet" role="dialog" aria-modal="true">
+          <div className="sheet-content">
+            <nav className="sheet-nav">
+              <a href="#" className="sheet-link" onClick={() => setMenuOpen(false)}>Features</a>
+              <a href="#" className="sheet-link" onClick={() => setMenuOpen(false)}>Pricing</a>
+              <a href="#" className="sheet-link" onClick={() => setMenuOpen(false)}>Blog</a>
+              <a href="#" className="sheet-link" onClick={() => setMenuOpen(false)}>Contact</a>
+            </nav>
+            <div className="sheet-actions">
+              <button className="btn-primary" onClick={() => setMenuOpen(false)}>Start 14-Days Free Trial</button>
+              <button className="btn-secondary" onClick={() => setMenuOpen(false)}>Log-in</button>
+            </div>
+          </div>
         </div>
       </header>
 
