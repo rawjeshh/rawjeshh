@@ -111,18 +111,32 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-left">
 
-              <div className="features-timeline" style={{ ['--active-index']: activeFeature }}>
-                <div className="timeline-line"></div>
-                <div className="timeline-active-line"></div>
-                {features.map((f, i) => (
-                  <div key={i} className={`feature-item ${i === activeFeature ? 'active' : 'inactive'}`}>
-                    <div className={`feature-icon ${i === activeFeature ? 'active-icon' : 'inactive-icon'}`}></div>
-                    <div className="feature-content">
-                      <h3>{f.title}</h3>
-                      <p>{f.desc}</p>
-                    </div>
+              <div className="features-slider">
+                <div
+                  className="slider-viewport"
+                  style={{ height: `${120 * 2}px` }}
+                  aria-live="polite"
+                >
+                  <div
+                    className="slider-track"
+                    style={{ transform: `translateY(${-(activeFeature * 120 - (240 - 120) / 2)}px)` }}
+                  >
+                    {features.map((f, i) => {
+                      const isActive = i === activeFeature
+                      const isNext = i === (activeFeature + 1) % features.length
+                      const cls = `feature-slide ${isActive ? 'active' : isNext ? 'next' : 'hidden'}`
+                      return (
+                        <div key={i} className={cls}>
+                          <span className={`slide-dot ${isActive ? 'dot-active' : 'dot-hidden'}`} />
+                          <div className="feature-content">
+                            <h3>{f.title}</h3>
+                            <p>{f.desc}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
 
