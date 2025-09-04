@@ -178,74 +178,37 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.features-timeline {
-  position: relative;
-  padding-left: 60px;
-  --slide-h: 150px;
-  --active-index: 0;
-}
+.features-slider { position: relative; padding-left: 40px; }
+.slider-viewport { overflow: hidden; position: relative; }
+.slider-track { transition: transform 0.6s ease; will-change: transform; }
 
-.timeline-line {
-  position: absolute;
-  left: 17px;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: rgba(217, 217, 217, 0.5);
-}
-
-.timeline-active-line {
-  position: absolute;
-  left: 17px;
-  top: 0;
-  width: 3px;
-  height: var(--slide-h);
-  background: #F89920;
-  border-radius: 2px;
-  transform: translateY(calc(var(--active-index) * var(--slide-h)));
-  transition: transform 0.6s ease;
-}
-
-.feature-item {
-  position: relative;
-  height: var(--slide-h);
+.feature-slide {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  gap: 16px;
+  height: 120px;
 }
 
-.feature-icon {
-  position: absolute;
-  left: -43px;
-  top: 8px;
-  width: 35px;
-  height: 35px;
+.slide-dot {
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.active-icon { background: radial-gradient(circle, rgba(248, 153, 32, 0.2) 0%, rgba(248, 153, 32, 0.5) 70%, #F89920 100%); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); }
-.inactive-icon { background: rgba(217, 217, 217, 0.5); }
+.dot-active { background: #F89920; box-shadow: 0 4px 8px rgba(0,0,0,0.25); }
+.dot-hidden { background: rgba(217,217,217,0.5); opacity: 0; }
 
-.feature-content h3 {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--white);
-  margin: 0 0 8px;
-}
+.feature-slide.active .feature-content h3 { font-size: 22px; color: var(--white); opacity: 1; }
+.feature-slide.active .feature-content p { font-size: 15px; color: var(--white); opacity: 0.95; }
 
-.feature-content p {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.4;
-  margin: 0;
-  max-width: 589px;
-}
+.feature-slide.next .feature-content h3 { font-size: 18px; opacity: 0.6; }
+.feature-slide.next .feature-content p { font-size: 13px; opacity: 0.6; }
 
-.feature-item.inactive .feature-content h3,
-.feature-item.inactive .feature-content p { opacity: 0.3; }
+.feature-slide.hidden { opacity: 0; }
 
-.feature-item.inactive .feature-content h3 { font-size: 20px; }
-.feature-item.inactive .feature-content p { font-size: 14px; }
+.feature-content h3 { margin: 0 0 6px; font-weight: 700; }
+.feature-content p { margin: 0; line-height: 1.4; max-width: 589px; }
 
 .hero-right {
   display: flex;
