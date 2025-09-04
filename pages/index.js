@@ -1,8 +1,36 @@
 export default function Home() {
   return (
-    <main className="page-container">
-      <h1 className="page-title">App is running</h1>
-      <p className="page-subtitle">Welcome! This Next.js app was initialized successfully.</p>
-    </main>
+    <div>
+      <header className="navbar">
+        <div className="navbar-container">
+          <div className="navbar-logo">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/d68075eff96e920583c8a647086b4aadf05be6fb?width=532"
+              alt="Market Insights"
+              className="logo-image"
+            />
+          </div>
+
+          <nav className="navbar-nav">
+            <a href="#" className="nav-link">Features</a>
+            <a href="#" className="nav-link">Pricing</a>
+            <a href="#" className="nav-link">Blog</a>
+            <a href="#" className="nav-link">Contact</a>
+          </nav>
+
+          <div className="navbar-actions">
+            <button className="btn-primary">Start 14-Days Free Trial</button>
+            <button className="btn-secondary">Log-in</button>
+          </div>
+        </div>
+      </header>
+
+      <main className="main-content">
+        <div className="content-container">
+          <h1>Welcome to Market Insights</h1>
+          <p>Your navigation bar is now ready!</p>
+        </div>
+      </main>
+    </div>
   )
 }
