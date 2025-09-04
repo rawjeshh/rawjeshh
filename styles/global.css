@@ -486,7 +486,7 @@ body {
 @media (max-width: 1200px) {
   .hero-content { grid-template-columns: 1fr 400px; gap: 40px; }
   .hero-title h1 { font-size: 36px; }
-  .features-timeline { --slide-h: 140px; }
+  .features-slider { --slide-h: 140px; }
   .feature-content h3 { font-size: 22px; }
   .feature-content p { font-size: 15px; }
 }
@@ -497,14 +497,14 @@ body {
   .hero-right { justify-content: center; padding-top: 0; }
   .form-panel { max-width: 500px; }
   .hero-title h1 { font-size: 32px; text-align: center; }
-  .features-timeline { padding-left: 50px; --slide-h: 130px; }
+  .features-slider { padding-left: 50px; --slide-h: 130px; }
   .feature-icon { left: -37px; }
 }
 
 @media (max-width: 768px) {
   .hero-container { padding: 30px 16px; }
   .hero-title h1 { font-size: 28px; }
-  .features-timeline { padding-left: 40px; --slide-h: 120px; }
+  .features-slider { padding-left: 40px; --slide-h: 120px; }
   .feature-content h3 { font-size: 20px; }
   .feature-content p { font-size: 14px; }
   .feature-item.inactive .feature-content h3 { font-size: 18px; }
@@ -520,7 +520,7 @@ body {
 
 @media (max-width: 480px) {
   .hero-title h1 { font-size: 24px; }
-  .features-timeline { padding-left: 35px; --slide-h: 110px; }
+  .features-slider { padding-left: 35px; --slide-h: 110px; }
   .feature-content h3 { font-size: 18px; }
   .feature-content p { font-size: 13px; }
   .feature-item.inactive .feature-content h3 { font-size: 16px; }
