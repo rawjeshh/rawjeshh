@@ -4,12 +4,14 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false) }
     if (menuOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
     }
-    return () => { document.body.style.overflow = '' }
+    window.addEventListener('keydown', onKey)
+    return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', onKey) }
   }, [menuOpen])
 
   return (
@@ -49,7 +51,8 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile/Tablet full-screen sheet */}
+        {/* Backdrop and Mobile/Tablet full-screen sheet */}
+        <div className="sheet-backdrop" onClick={() => setMenuOpen(false)} />
         <div id="mobile-sheet" className="mobile-sheet" role="dialog" aria-modal="true">
           <div className="sheet-header">
             <img
