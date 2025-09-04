@@ -51,6 +51,20 @@ export default function Home() {
 
         {/* Mobile/Tablet full-screen sheet */}
         <div id="mobile-sheet" className="mobile-sheet" role="dialog" aria-modal="true">
+          <div className="sheet-header">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/d68075eff96e920583c8a647086b4aadf05be6fb?width=532"
+              alt="Market Insights"
+              className="logo-image"
+            />
+            <button
+              className="close-toggle"
+              aria-label="Close navigation menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="close-bar" />
+            </button>
+          </div>
           <div className="sheet-content">
             <nav className="sheet-nav">
               <a href="#" className="sheet-link" onClick={() => setMenuOpen(false)}>Features</a>
