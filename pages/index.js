@@ -85,13 +85,13 @@ export default function Home() {
 
       <main className="hero-section">
         <div className="hero-container">
+          <div className="hero-title">
+            <h1>
+              Understand Your <span className="highlight-text">Automobile Market insights</span> in Minutes @ Just at <span className="price-text">₹500 per month</span>
+            </h1>
+          </div>
           <div className="hero-content">
             <div className="hero-left">
-              <div className="hero-headline">
-                <h1>
-                  Understand Your <span className="highlight-text">Automobile Market insights</span> in Minutes @ Just at <span className="price-text">₹500 per month</span>
-                </h1>
-              </div>
 
               <div className="features-timeline">
                 <div className="timeline-line"></div>
