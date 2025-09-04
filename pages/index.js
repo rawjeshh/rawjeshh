@@ -83,10 +83,95 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="main-content">
-        <div className="content-container">
-          <h1>Welcome to Market Insights</h1>
-          <p>Your navigation bar is now ready!</p>
+      <main className="hero-section">
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="hero-left">
+              <div className="hero-headline">
+                <h1>
+                  Understand Your <span className="highlight-text">Automobile Market insights</span> in Minutes @ Just at <span className="price-text">₹500 per month</span>
+                </h1>
+              </div>
+
+              <div className="features-timeline">
+                <div className="timeline-line"></div>
+                <div className="feature-item active">
+                  <div className="feature-icon active-icon"></div>
+                  <div className="feature-content">
+                    <h3>Track Your Brand Performance</h3>
+                    <p>Understand how your brand is performing in your specific area (State/RTO) with latest retails and trend charts.</p>
+                  </div>
+                </div>
+                <div className="feature-item inactive">
+                  <div className="feature-icon inactive-icon"></div>
+                  <div className="feature-content">
+                    <h3>Monitor Competitors</h3>
+                    <p>See exactly how your competitors are doing in your preferred area, and spot opportunities to stay ahead.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-right">
+              <div className="form-panel">
+                <h2>Try Live Now</h2>
+
+                <div className="form-section">
+                  <label>Choose Your Automobile Business Type</label>
+                  <div className="vehicle-types">
+                    <div className="vehicle-option">
+                      <img src="https://api.builder.io/api/v1/image/assets/TEMP/418c81359bc91d293dc7c267856ef75d809fb92d?width=54" alt="2 Wheeler" />
+                      <span>2 Wheeler</span>
+                    </div>
+                    <div className="vehicle-option">
+                      <img src="https://api.builder.io/api/v1/image/assets/TEMP/99dfe6048536a9d298657dd90a94ec5b92f80fa3?width=48" alt="3 Wheeler" />
+                      <span>3 Wheeler</span>
+                    </div>
+                    <div className="vehicle-option">
+                      <img src="https://api.builder.io/api/v1/image/assets/TEMP/ac06624fab37fc6e4be49c0921d8602dd8a18776?width=68" alt="Cars" />
+                      <span>Cars</span>
+                    </div>
+                    <div className="vehicle-option">
+                      <img src="https://api.builder.io/api/v1/image/assets/TEMP/44976abfc01f79a93283aa972662b909f4f04af8?width=42" alt="Trucks & Bus" />
+                      <span>Trucks & Bus</span>
+                    </div>
+                    <div className="vehicle-option">
+                      <img src="https://api.builder.io/api/v1/image/assets/TEMP/d604ff819ece6ab8a189e4588ca7cc153062e906?width=44" alt="Tractor" />
+                      <span>Tractor</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="form-section">
+                  <label>Choose Your Automobile Business Brand</label>
+                  <div className="form-input">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="#D1D1D1" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="#D1D1D1" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 15L16 10L5 21" stroke="#D1D1D1" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <input type="text" placeholder="Start Typing your brand to Select..." />
+                  </div>
+                </div>
+
+                <div className="form-section">
+                  <label>Choose Your State</label>
+                  <div className="form-input">
+                    <input type="text" placeholder="Select your State" />
+                    <svg width="15" height="8" viewBox="0 0 15 8" fill="none">
+                      <path d="M7.5 7.5L0.138785 0.75L14.8612 0.750001L7.5 7.5Z" fill="#9CA3AF"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <button className="btn-primary form-btn">Check Insights live Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="automobile-strip">
+          <img src="https://api.builder.io/api/v1/image/assets/TEMP/b8c1bc7f410fff4efe20d6500fff83445c3ee480?width=2866" alt="Automobile types" />
         </div>
       </main>
     </div>
