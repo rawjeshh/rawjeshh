@@ -1,7 +1,11 @@
+import { useState } from 'react'
+
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <div>
-      <header className="navbar">
+      <header className={`navbar ${menuOpen ? 'open' : ''}`}>
         <div className="navbar-container">
           <div className="navbar-logo">
             <img
@@ -11,7 +15,7 @@ export default function Home() {
             />
           </div>
 
-          <nav className="navbar-nav">
+          <nav className="navbar-nav" id="site-navigation">
             <a href="#" className="nav-link">Features</a>
             <a href="#" className="nav-link">Pricing</a>
             <a href="#" className="nav-link">Blog</a>
@@ -22,6 +26,16 @@ export default function Home() {
             <button className="btn-primary">Start 14-Days Free Trial</button>
             <button className="btn-secondary">Log-in</button>
           </div>
+
+          <button
+            className="menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-controls="site-navigation"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className="menu-bar" />
+          </button>
         </div>
       </header>
 
