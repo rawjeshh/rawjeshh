@@ -2,6 +2,17 @@ import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const features = [
+    {
+      title: 'Track Your Brand Performance',
+      desc: 'Understand how your brand is performing in your specific area (State/RTO) with latest retails and trend charts.',
+    },
+    {
+      title: 'Monitor Competitors',
+      desc: 'See exactly how your competitors are doing in your preferred area, and spot opportunities to stay ahead.',
+    },
+  ]
+  const [activeFeature, setActiveFeature] = useState(0)
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false) }
