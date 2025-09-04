@@ -111,22 +111,18 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-left">
 
-              <div className="features-timeline">
+              <div className="features-timeline" style={{ ['--active-index']: activeFeature }}>
                 <div className="timeline-line"></div>
-                <div className="feature-item active">
-                  <div className="feature-icon active-icon"></div>
-                  <div className="feature-content">
-                    <h3>Track Your Brand Performance</h3>
-                    <p>Understand how your brand is performing in your specific area (State/RTO) with latest retails and trend charts.</p>
+                <div className="timeline-active-line"></div>
+                {features.map((f, i) => (
+                  <div key={i} className={`feature-item ${i === activeFeature ? 'active' : 'inactive'}`}>
+                    <div className={`feature-icon ${i === activeFeature ? 'active-icon' : 'inactive-icon'}`}></div>
+                    <div className="feature-content">
+                      <h3>{f.title}</h3>
+                      <p>{f.desc}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="feature-item inactive">
-                  <div className="feature-icon inactive-icon"></div>
-                  <div className="feature-content">
-                    <h3>Monitor Competitors</h3>
-                    <p>See exactly how your competitors are doing in your preferred area, and spot opportunities to stay ahead.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
