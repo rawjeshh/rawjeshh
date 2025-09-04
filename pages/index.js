@@ -11,6 +11,14 @@ export default function Home() {
       title: 'Monitor Competitors',
       desc: 'See exactly how your competitors are doing in your preferred area, and spot opportunities to stay ahead.',
     },
+    {
+      title: 'Get Daily Notifications',
+      desc: 'Stay updated with WhatsApp, SMS, and Email alerts — get daily insights on your brand performance and competitor movements without logging in.',
+    },
+    {
+      title: 'Check the Leaderboard',
+      desc: 'View the Leaderboard for your region — know who’s leading, who’s catching up, and how you rank in your market.',
+    },
   ]
   const [activeFeature, setActiveFeature] = useState(0)
 
