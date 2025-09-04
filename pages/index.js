@@ -25,6 +25,13 @@ export default function Home() {
     return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', onKey) }
   }, [menuOpen])
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveFeature((i) => (i + 1) % features.length)
+    }, 4000)
+    return () => clearInterval(id)
+  }, [features.length])
+
   return (
     <div>
       <header className={`navbar ${menuOpen ? 'open' : ''}`}>
