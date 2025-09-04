@@ -150,13 +150,18 @@ body {
   gap: 60px;
 }
 
-.hero-headline h1 {
+.hero-title {
+  max-width: 1156px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.hero-title h1 {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
   color: var(--white);
   margin: 0;
-  text-align: center;
 }
 
 .highlight-text {
